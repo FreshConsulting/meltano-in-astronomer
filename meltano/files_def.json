@@ -1,0 +1,13 @@
+[
+{
+    
+      "entity": "Users",
+      "path": "test.csv",
+      "keys": [ "id",
+      "firstname",
+      "lastname",
+      "email",
+      "phone",
+      "profession"]
+}
+]
