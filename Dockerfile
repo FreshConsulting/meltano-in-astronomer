@@ -1,5 +1,5 @@
 # syntax=quay.io/astronomer/airflow-extensions:v1
-FROM quay.io/astronomer/astro-runtime:11.6.0
+FROM quay.io/astronomer/astro-runtime:11.9.0
 
 # Create virtual environment to install Meltano in
 USER astro
@@ -28,5 +28,5 @@ RUN chown -R astro:astro ${MELTANO_FOLDER}
 USER ${ASTRONOMER_USER}
 WORKDIR ${AIRFLOW_HOME}
 
-ENTRYPOINT ["/entrypoint"]
+ENTRYPOINT ["tini", "--", "/entrypoint"]
 CMD ["airflow", "--help"]
